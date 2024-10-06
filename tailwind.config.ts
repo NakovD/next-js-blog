@@ -12,6 +12,9 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      gridTemplateRows: {
+        "body": "auto 1fr auto"
+      }
     },
   },
   plugins: [],

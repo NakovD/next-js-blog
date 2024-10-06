@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ReactNode } from "react";
-import { Header } from "./components/Header";
+import { Header } from "./components/header/Header";
+import { Footer } from "./components/footer/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -18,7 +19,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Blog",
   description: "The best blog you will ever see.",
-  creator: "David Nakov"
+  creator: "David Nakov",
 };
 
 type RootLayoutProps = Readonly<{
@@ -27,9 +28,10 @@ type RootLayoutProps = Readonly<{
 
 const RootLayout = ({ children }: RootLayoutProps) => (
   <html lang="en">
-    <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen grid grid-rows-body`}>
       <Header />
       {children}
+      <Footer />
     </body>
   </html>
 );

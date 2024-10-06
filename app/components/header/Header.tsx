@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HeaderNavLink } from "./HeaderLink";
+import { HeaderLink } from "./HeaderLink";
 
 export const Header = () => (
   <header>
@@ -34,9 +34,9 @@ export const Header = () => (
         </div>
         <div className="flex pl-4 text-sm">
           <ul className="list-reset flex justify-between flex-1 md:flex-none items-center">
-            <HeaderNavLink text="Home" href="/" />
-            <HeaderNavLink text="Link" href="/" />
-            <HeaderNavLink text="Link" href="/" />
+            <HeaderLink text="Home" href="/" />
+            <HeaderLink text="Link" href="/" />
+            <HeaderLink text="Link" href="/" />
           </ul>
         </div>
       </div>
