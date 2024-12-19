@@ -28,9 +28,12 @@ type RootLayoutProps = Readonly<{
 
 const RootLayout = ({ children }: RootLayoutProps) => (
   <html lang="en">
-    <body className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen grid grid-rows-body`}>
+    <body
+      className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen grid grid-rows-body`}
+    >
       <Header />
-      {children}
+      <div className="px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-14">{children}</div>
+
       <Footer />
     </body>
   </html>
