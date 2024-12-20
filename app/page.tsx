@@ -23,8 +23,25 @@ const blogPosts = [
 
 const HomePage = () => {
   return (
-    <div className="grid place-items-center">
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div>
+      <div className="mt-6" />
+      <section>
+        <h1 className="text-center text-xl text-blue-400">
+          Welcome to [My Blog Name]
+        </h1>
+        <div className="mt-8" />
+        <p className="max-w-lg ml-64">
+          Your go-to destination for developer insights, tips, and discoveries.
+          Here, we dive deep into topics that inspire, inform, and ignite
+          curiosity for developers of all levels. Whether you&apos;re looking
+          for coding tutorials, career advice, or the latest trends in software
+          development, you&apos;ll find something that speaks to you.
+        </p>
+      </section>
+      <section>
+        <h2>Explore some of our best articles</h2>
+        <div className="mt-3" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {blogPosts.map((post, index) => (
           <div
             key={index}
@@ -71,6 +88,7 @@ const HomePage = () => {
             </div>
           </div>
         ))}
+        </div>
       </section>
     </div>
   );
