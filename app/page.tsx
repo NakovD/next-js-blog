@@ -38,6 +38,25 @@ const HomePage = () => {
           development, you&apos;ll find something that speaks to you.
         </p>
       </section>
+      <div className="mt-6" />
+      <section>
+        <p>Explore Our Categories</p>{" "}
+        <ul>
+          <li className="list-disc">
+            Web Development: Best practices, frameworks, and modern web trends.
+          </li>
+          <li className="list-disc">
+            Backend & APIs: Insights into server-side programming and API
+            design.
+          </li>
+          <li className="list-disc">
+            DevOps: Tools, workflows, and automation for seamless deployments.
+          </li>
+          <li className="list-disc">
+            Career Growth: Tips for advancing your career as a developer.
+          </li>
+        </ul>
+      </section>
       <section>
         <h2>Explore some of our best articles</h2>
         <div className="mt-3" />
