@@ -57,6 +57,14 @@ const HomePage = () => {
           </li>
         </ul>
       </section>
+      <div className="mt-6" />
+      <section>
+        Why Follow Us? We believe in sharing content that resonates, connects,
+        and helps developers grow. With new posts every week, we aim to keep
+        your skills sharp and your knowledge up-to-date. Join our growing
+        community and let&apos;s explore the world of development, one post at a
+        time.
+      </section>
       <section>
         <h2>Explore some of our best articles</h2>
         <div className="mt-3" />
