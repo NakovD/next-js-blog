@@ -9,6 +9,9 @@
     "lint": "next lint",
     "prisma": "npx prisma"
   },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed/initialSeed.ts"
+  },
   "dependencies": {
     "@prisma/client": "^6.1.0",
     "@vercel/postgres": "^0.10.0",
