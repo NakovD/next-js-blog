@@ -1,27 +1,16 @@
 import Link from "next/link";
 
-const blogPosts = [
-  {
-    title: "Understanding React",
-    excerpt: "A deep dive into the world of React and its features.",
-    date: "October 10, 2024",
-    author: "John Doe",
-  },
-  {
-    title: "CSS Tricks for Modern Web Development",
-    excerpt: "Learn some useful CSS tricks to enhance your web design.",
-    date: "October 5, 2024",
-    author: "Jane Smith",
-  },
-  {
-    title: "Getting Started with Tailwind CSS",
-    excerpt: "A beginner’s guide to using Tailwind CSS in your projects.",
-    date: "September 30, 2024",
-    author: "Alice Johnson",
-  },
-];
+import { PrismaClient } from "@prisma/client";
 
-const HomePage = () => {
+const prisma = new PrismaClient();
+
+async function getPosts() {
+  return await prisma.post.findMany();
+}
+
+const HomePage = async () => {
+  const posts = await getPosts();
+
   return (
     <div>
       <div className="mt-6" />
@@ -97,7 +86,7 @@ const HomePage = () => {
         <h2>Explore some of our best articles</h2>
         <div className="mt-3" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogPosts.map((post, index) => (
+          {posts.map((post, index) => (
             <div
               key={index}
               className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
@@ -112,12 +101,11 @@ const HomePage = () => {
               <div className="p-5">
                 <a href="#">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    Noteworthy technology acquisitions 2021
+                    {post.name}
                   </h5>
                 </a>
                 <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                  Here are the biggest enterprise technology acquisitions of
-                  2021 so far, in reverse chronological order.
+                  {post.description}
                 </p>
                 <a
                   href="#"
