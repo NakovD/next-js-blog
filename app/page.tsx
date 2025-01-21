@@ -1,15 +1,8 @@
+import { db } from "@/server/db";
 import Link from "next/link";
 
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
-
-async function getPosts() {
-  return await prisma.post.findMany();
-}
-
 const HomePage = async () => {
-  const posts = await getPosts();
+  const posts = await await db.post.findMany();
 
   return (
     <div>
