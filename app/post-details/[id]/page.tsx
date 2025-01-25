@@ -1,4 +1,12 @@
-const BlogPage = () => {
+import { db } from "@/server/db";
+
+const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const post = await db.post.findUniqueOrThrow({
+    where: {
+      id: Number((await params).id),
+    },
+  });
+
   return (
     <>
       <div className="text-center pt-16 md:pt-32">
@@ -7,7 +15,7 @@ const BlogPage = () => {
           STARTED
         </p>
         <h1 className="font-bold break-normal text-3xl md:text-5xl">
-          Welcome to Ghostwind CSS
+          {post.name}
         </h1>
       </div>
 
@@ -167,6 +175,5 @@ const BlogPage = () => {
     </>
   );
 };
-
 
 export default BlogPage;
