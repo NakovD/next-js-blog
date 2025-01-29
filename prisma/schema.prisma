@@ -19,4 +19,5 @@ model Post {
   name        String
   description String
   createdAt   DateTime  @default(now()) @db.Timestamptz(3)
+  updatedAt   DateTime  @default(now()) @db.Timestamptz(3)
 }
