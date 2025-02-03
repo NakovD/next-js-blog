@@ -18,7 +18,7 @@ model Post {
   id          Int       @id @default(autoincrement())
   name          String
   description   String
-  thumbnailUrl  string?
+  thumbnailUrl  String?
   createdAt     DateTime  @default(now()) @db.Timestamptz(3)
   updatedAt     DateTime  @default(now()) @db.Timestamptz(3)
 }
