@@ -62,12 +62,7 @@ const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
               using Tailwind CSS and vanilla Javascript.
             </p>
 
-            <p className="py-6">
-              The basic blog page layout is available and all using the default
-              Tailwind CSS classNamees (although there are a few hardcoded style
-              tags). If you are going to use this in your project, you will want
-              to convert the classNamees into components.
-            </p>
+            <p className="py-6">{post.description}</p>
 
             <p className="py-6">
               Sed dignissim lectus ut tincidunt vulputate. Fusce tincidunt lacus
