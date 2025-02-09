@@ -16,8 +16,9 @@ datasource db {
 
 model Post {
   id          Int       @id @default(autoincrement())
-  name        String
-  description String
-  createdAt   DateTime  @default(now()) @db.Timestamptz(3)
-  updatedAt   DateTime  @default(now()) @db.Timestamptz(3)
+  name          String
+  description   String
+  thumbnailUrl  String?
+  createdAt     DateTime  @default(now()) @db.Timestamptz(3)
+  updatedAt     DateTime  @default(now()) @db.Timestamptz(3)
 }

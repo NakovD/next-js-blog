@@ -1,5 +1,8 @@
 import { db } from "@/server/db";
 
+const defaultImage =
+  "https://plus.unsplash.com/premium_photo-1728510320088-0b89856e726e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+
 const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const post = await db.post.findUniqueOrThrow({
     where: {
@@ -22,8 +25,7 @@ const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
       <div
         className="container w-full max-w-6xl mx-auto bg-white bg-cover mt-8 rounded"
         style={{
-          backgroundImage:
-            "url('https://plus.unsplash.com/premium_photo-1728510320088-0b89856e726e?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+          backgroundImage: `url('${post.thumbnailUrl ?? defaultImage}')`,
           height: "75vh",
         }}
       ></div>
@@ -60,12 +62,7 @@ const BlogPage = async ({ params }: { params: Promise<{ id: string }> }) => {
               using Tailwind CSS and vanilla Javascript.
             </p>
 
-            <p className="py-6">
-              The basic blog page layout is available and all using the default
-              Tailwind CSS classNamees (although there are a few hardcoded style
-              tags). If you are going to use this in your project, you will want
-              to convert the classNamees into components.
-            </p>
+            <p className="py-6">{post.description}</p>
 
             <p className="py-6">
               Sed dignissim lectus ut tincidunt vulputate. Fusce tincidunt lacus
