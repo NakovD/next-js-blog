@@ -4,6 +4,7 @@ import "./globals.css";
 import { ReactNode } from "react";
 import { Header } from "./components/header/Header";
 import { Footer } from "./components/footer/Footer";
+import { Toaster } from "./components/ui/Toaster";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,7 +34,7 @@ const RootLayout = ({ children }: RootLayoutProps) => (
     >
       <Header />
       <div className="px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-14">{children}</div>
-
+      <Toaster />
       <Footer />
     </body>
   </html>
