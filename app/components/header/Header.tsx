@@ -35,7 +35,7 @@ export const Header = () => (
         <div className="flex pl-4 text-sm">
           <ul className="list-reset flex justify-between flex-1 md:flex-none items-center">
             <HeaderLink text="Home" href="/" />
-            <HeaderLink text="Link" href="/add-post" />
+            <HeaderLink text="Add Post" href="/add-post" />
             <HeaderLink text="Link" href="/" />
           </ul>
         </div>
