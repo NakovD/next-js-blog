@@ -9,7 +9,7 @@ const AddPostPage = () => {
   const { control } = useAppForm<{ name: string }>();
 
   return (
-    <div>
+    <form>
       <Controller
         control={control}
         name="name"
@@ -20,7 +20,7 @@ const AddPostPage = () => {
           </Label>
         )}
       />
-    </div>
+    </form>
   );
 };
 
