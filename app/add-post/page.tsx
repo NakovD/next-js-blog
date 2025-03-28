@@ -6,7 +6,7 @@ import { useAppForm } from "@/app/hooks/useAppForm";
 import { Label } from "@/app/components/ui/form/Label";
 
 const AddPostPage = () => {
-  const { control } = useAppForm<{ name: string }>();
+  const { control } = useAppForm<{ name: string; thumbnailUrl: string }>();
 
   return (
     <form>
@@ -16,6 +16,16 @@ const AddPostPage = () => {
         render={({ field: { name, ...rest } }) => (
           <Label htmlFor={name}>
             Name
+            <Input id={name} {...rest} />
+          </Label>
+        )}
+      />
+      <Controller
+        control={control}
+        name="thumbnailUrl"
+        render={({ field: { name, ...rest } }) => (
+          <Label htmlFor={name}>
+            Thumbnail URL
             <Input id={name} {...rest} />
           </Label>
         )}
